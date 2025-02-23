@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario con GET</title>
+</head>
+<body>
+    <form action="/" method="get"> <!-- Agregar method="get", por el method "post", los datos se ocultan y se ven en inspleccionar payload--> 
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" value="Jhon" disabled> <!--, maxlenght para maximo de valores, el volue jhon aparece ya sugerido, readonly, el input no se puede cambiar-->
+        <br><br>
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" value="ap" maxlength="4">
+        <br><br>
+
+        <input type="radio" name="genero" id="mujer" value="mujer">
+        <label for="mujer">Mujer</label>
+
+        <input type="radio" name="genero" id="hombre" value="hombre">
+        <label for="hombre">Hombre</label>
+
+        <input type="radio" name="genero" id="otro" value="otro">
+        <label for="otro">Otro</label>
+        <br><br>
+
+        <!-- Botón de envío dentro del formulario -->
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
