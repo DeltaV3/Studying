@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloWorldRestController {
 
-    //@GetMapping Me permite asignarle una URL a cadda funcion
+    //@GetMapping Me permite asignarle una URL a cada funcion
     @GetMapping({"/hello","/hw"})
     public String helloWorld() {
         return "Hello World";
