@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border: 1px solid green;
+        }
+
+        p:hover { /*Si el mouse esta encima de ella, se aplica lo del estilo*/
+            color: red;
+        }
+
+        input:focus { /*Si el click esta en ella, se aplica lo del estilo*/
+            width: 5px;
+        }
+
+        li:first-child { /*Selecciona el primer elemento de la lista*/
+            color: red;
+        }
+
+        li:last-child { /*Selecciona el ultimo elemento de la lista*/
+            color: blue;
+        }
+
+        li:nth-child(2) { /*Selecciona el segundo elemento de la lista*/
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>Parrafo 1</p>
+        <p>Parrafo 2</p>
+        <input type="text" name="name" placeholder="Nombre">
+        <input type="text" name="lastname" placeholder="Apellido">
+        <ol>
+            <li>Elemento 1</li>
+            <li>Elemento 2</li>
+            <li>Elemento 3</li>
+        </ol>
+    </div>
+</body>
+</html>

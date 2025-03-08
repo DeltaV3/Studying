@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+         * { /* Selecciona todos los elementos de la página*/
+            margin: 0;
+            font-size: 50px;
+        }
+        #nocolor{ /*Selecciona por id*/
+            color: red;
+        }
+
+        .color-verde{ /*Selecciona por clase*/
+            color: green;
+        }
+
+        div > h2{ /*Selecciona h2 dentro de div, pero que sea hijo directo*/
+            color: red;
+        }
+
+        div h2{ /*Selecciona todos los h2  de un div, no importa el nivel*/
+            color: red;
+        }
+
+        h1,h3{ /*Selecciona h1 y h3*/
+            color: blue;
+        }
+
+        input[type="text"]{ /*Selecciona input de tipo text*/
+            color: blue;
+        }
+
+        h2.clase1.clase3{ /*Selecciona h2 que tenga clase1 y clase3*/
+            color: green;
+        }
+
+        .clase3{ /*Selecciona clase3*/
+            color: yellow;
+        }
+
+    </style>
+</head>
+<body>
+    <h2 class="clase1 clase3">Titulo 1</h2>
+    <h2 class="clase2">Titulo 2</h2>
+    <h2 class="clase1">Titulo 3</h2>
+    <div class="clase1">Titulo 4</div>
+</body>
+</html>
