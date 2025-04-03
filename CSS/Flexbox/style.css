@@ -1,0 +1,18 @@
+ /* Flexbox */	
+.container{
+    height: 400px;
+    display: flex;
+    /*flex-direction: column; /*Cambiar la dirección de los elementos*/
+    /*flex-wrap: wrap; /*Permite que los elementos se ajusten al tamaño del contenedor*/
+    flex-flow: row wrap ; /*Combinación de flex-direction y flex-wrap*/
+    justify-content: center; /*Flex start valor por defecto*/
+    align-items: center; /*Alinea los elementos verticalmente*/
+    background-color: lightgray;
+}
+
+span{
+    margin:10px;
+    padding: 10px;
+    width: 100px;
+    border: 1px solid black;
+}

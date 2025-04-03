@@ -9,6 +9,7 @@ import java.util.List;
 
 
 @RestController
+@RequestMapping("/clientes") //URL Para toda la clase
 public class CustomerController {
 
     private List<Customer> customers = new ArrayList<>(Arrays.asList(
@@ -20,13 +21,15 @@ public class CustomerController {
 
 
     //Obtiene los clientes que hay en la aplicaciones
-    @GetMapping("/clientes")
+    //@RequestMapping(method = RequestMethod.GET) //Ejemplo de URL para metodos, es mas explicito
+    @GetMapping
     public List<Customer> getCustomers() {
         return customers;
     }
 
     //Obtiene solo un cliente en especifico
-    @GetMapping("/clientes/{username}")
+    //@RequestMapping(value = "/{username}", method = RequestMethod.GET)
+    @GetMapping("/{username}")
     public Customer getCustomer(@PathVariable String username) {
         for (Customer c : customers) {
             if (c.getUsername().equalsIgnoreCase(username)) {
@@ -37,10 +40,62 @@ public class CustomerController {
     }
 
     // Metodo para agregar mas clientes
-    @PostMapping("/clientes")
+    //@RequestMapping(method = RequestMethod.POST)
+    @PostMapping //Post Agregar
     public Customer postCliente(@RequestBody Customer customer) {
         customers.add(customer);
         return customer;
     }
 
+    //@RequestMapping(method = RequestMethod.PUT)
+    @PutMapping //Put Modificar
+    public Customer putCliente(@RequestBody Customer customer) {
+        for (Customer c : customers) {
+            if(c.getId() == customer.getId()) {
+                c.setName(customer.getName());
+                c.setUsername(customer.getUsername());
+                c.setPassword(customer.getPassword());
+
+                return c;
+            }
+        }
+        return null;
+    }
+
+    //@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    @DeleteMapping("/{id}")
+    public Customer deleteCliente(@PathVariable int id) {
+        for (Customer c : customers) {
+            if(c.getId() == id) {
+                customers.remove(c);
+
+                return c;
+            }
+        }
+        return null; //Error
+    }
+
+    //@RequestMapping(method = RequestMethod.PATCH)
+    @PatchMapping
+    public Customer patchCliente(@RequestBody Customer customer) {
+        for (Customer c : customers) {
+            if(c.getId() == customer.getId()) {
+
+                if(customer.getName() != null) {
+                    c.setName(customer.getName());
+                }
+
+                if(customer.getUsername() != null) {
+                    c.setUsername(customer.getUsername());
+                }
+
+                if(customer.getPassword() != null) {
+                    c.setPassword(customer.getPassword());
+                }
+
+                return c;
+            }
+        }
+        return null; // Pesima practica
+    }
 }
